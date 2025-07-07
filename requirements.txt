@@ -1,0 +1,7 @@
+fastapi[all]
+uvicorn
+ariadne
+motor
+httpx
+python-jose
+python-dotenv
