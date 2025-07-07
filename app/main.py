@@ -7,6 +7,16 @@ import os
 load_dotenv()
 
 app = FastAPI()
+
+# CORS: configuración profesional y genérica
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 graphql_app = GraphQL(schema, debug=True)
 app.mount("/graphql", graphql_app)
 
